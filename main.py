@@ -22,7 +22,7 @@ with open('input_generated.txt', 'r') as f:
                         b = x0 / cos(pi * i / 180)
                         if (list_of_distances[i] == 0 or b < list_of_distances[i]) and b > 0:
                             if lim == 'y':
-                                if ymin < (b * sin(pi * i / 180)) < ymax:
+                                if ymin <= (b * sin(pi * i / 180)) <= ymax:
                                     list_of_distances[i] = b
                             else:
                                 list_of_distances[i] = b
@@ -37,10 +37,10 @@ with open('input_generated.txt', 'r') as f:
                                 sin(pi * i / 180) - cos(pi * i / 180) * (y1 - y0) / (x1 - x0))
                         if (list_of_distances[i] == 0 or b < list_of_distances[i]) and b > 0:
                             if lim == 'x':
-                                if xmin < b * cos(pi * i / 180) < xmax:
+                                if xmin <= b * cos(pi * i / 180) <= xmax:
                                     list_of_distances[i] = b
                             elif lim == 'y':
-                                if ymin < sin(pi * i / 180) < ymax:
+                                if ymin <= sin(pi * i / 180) <= ymax:
                                     list_of_distances[i] = b
                             else:
                                 list_of_distances[i] = b
@@ -59,10 +59,10 @@ with open('input_generated.txt', 'r') as f:
                                 pow(x0, 2) + pow(y0, 2) - pow(r, 2)), 0.5) / 2
                     if (list_of_distances[i] == 0 or b < list_of_distances[i]) and b > 0:
                         if lim == 'x':
-                            if xmin < b * cos(pi * i / 180) < xmax:
+                            if xmin <= b * cos(pi * i / 180) <= xmax:
                                 list_of_distances[i] = b
                         if lim == 'y':
-                            if ymin < b * sin(pi * i / 180) < ymax:
+                            if ymin <= b * sin(pi * i / 180) <= ymax:
                                 list_of_distances[i] = b
                         else:
                             list_of_distances[i] = b
@@ -74,10 +74,10 @@ with open('input_generated.txt', 'r') as f:
                                 pow(x0, 2) + pow(y0, 2) - pow(r, 2)), 0.5) / 2
                     if (list_of_distances[i] == 0 or b < list_of_distances[i]) and b > 0:
                         if lim == 'x':
-                            if xmin < b * cos(pi * i / 180) < xmax:
+                            if xmin <= b * cos(pi * i / 180) <= xmax:
                                 list_of_distances[i] = b
                         if lim == 'y':
-                            if ymin < b * sin(pi * i / 180) < ymax:
+                            if ymin <= b * sin(pi * i / 180) <= ymax:
                                 list_of_distances[i] = b
                         else:
                             list_of_distances[i] = b
