@@ -83,5 +83,5 @@ with open('input_generated.txt', 'r') as f:
                             list_of_distances[i] = b
         with open(name_of_output + str(cur_iter+1) + '.txt', 'w') as out:
             for idx, res in enumerate(list_of_distances):
-                out.write(f'{idx},{res},{int(bool(res))}\n')
+                out.write(f'{idx},{int(bool(res))},{res}\n')
         f.readline()
