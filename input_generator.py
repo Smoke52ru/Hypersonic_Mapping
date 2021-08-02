@@ -41,9 +41,9 @@ def draw_picture(name, line_list, circles_list, scale=1000):
 
 # генератор float от start до stop включительно
 def float_range(start, stop, step):
-    while start < stop:
+    while round(start, 4) < round(stop, 4):
         yield float(start)
-        start += step
+        start += round(step, 4)
 
 
 def quads_handler():
@@ -105,7 +105,7 @@ def rec_fun():
     rec_count -= 1
 
 
-input_file = open('gen_input_quads.txt', 'r')
+input_file = open('gen_input.txt', 'r')
 name_of_output = input_file.readline()[:-1]
 library_file = open(f'{name_of_output}_library.txt', 'w')
 res_file = open('input_generated.txt', 'w')
