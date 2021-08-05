@@ -8,7 +8,7 @@ SEP_LINE = '#######################'
 
 # визуализация карты препятствий
 picture_dir = 'pictures'
-picture_width = 800
+picture_width = 600
 picture_height = 600
 picture_counter = 1
 
@@ -25,10 +25,11 @@ def draw_picture(name, line_list, circles_list, scale=1000):
     # отрисовка окружностей
     for circ in circles_list:
         center_x, center_y, radius = circ
-        draw.ellipse(((center_x - radius) * scale + picture_width / 2,
-                      (center_y - radius) * scale + picture_height,
-                      (center_x + radius) * scale + picture_width / 2,
-                      (center_y + radius) * scale + picture_height))
+        x0, x1 = sorted(((center_x - radius) * scale + picture_width / 2,
+                         (center_x + radius) * scale + picture_width / 2))
+        y0, y1 = sorted((picture_height - (center_y - radius) * scale,
+                         picture_height - (center_y + radius) * scale))
+        draw.ellipse((x0, y0, x1, y1))
     # отрисовка начала координат
     draw.rectangle((picture_width / 2 - 3, picture_height - 3, picture_width / 2 + 3, picture_height),
                    fill=ImageColor.getrgb('yellow'))
