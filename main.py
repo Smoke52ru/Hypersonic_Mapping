@@ -54,9 +54,9 @@ with open('input_generated.txt', 'r') as f:
             for i in range(181):
                 if pow(-2 * x0 * cos(pi * i / 180) - 2 * y0 * sin(pi * i / 180), 2) - 4 * (
                         pow(x0, 2) + pow(y0, 2) - pow(r, 2)) >= 0:
-                    b = 2 * x0 * cos(pi * i / 180) + 2 * y0 * sin(pi * i / 180) + pow(
+                    b = (2 * x0 * cos(pi * i / 180) + 2 * y0 * sin(pi * i / 180) + pow(
                         pow(-2 * x0 * cos(pi * i / 180) - 2 * y0 * sin(pi * i / 180), 2) - 4 * (
-                                pow(x0, 2) + pow(y0, 2) - pow(r, 2)), 0.5) / 2
+                                pow(x0, 2) + pow(y0, 2) - pow(r, 2)), 0.5)) / 2
                     if (list_of_distances[i] == 0 or b < list_of_distances[i]) and b > 0:
                         if lim == 'x':
                             if xmin <= b * cos(pi * i / 180) <= xmax:
@@ -69,9 +69,9 @@ with open('input_generated.txt', 'r') as f:
             for i in range(181):
                 if pow(-2 * x0 * cos(pi * i / 180) - 2 * y0 * sin(pi * i / 180), 2) - 4 * (
                         pow(x0, 2) + pow(y0, 2) - pow(r, 2)) >= 0:
-                    b = 2 * x0 * cos(pi * i / 180) + 2 * y0 * sin(pi * i / 180) - pow(
+                    b = (2 * x0 * cos(pi * i / 180) + 2 * y0 * sin(pi * i / 180) - pow(
                         pow(-2 * x0 * cos(pi * i / 180) - 2 * y0 * sin(pi * i / 180), 2) - 4 * (
-                                pow(x0, 2) + pow(y0, 2) - pow(r, 2)), 0.5) / 2
+                                pow(x0, 2) + pow(y0, 2) - pow(r, 2)), 0.5)) / 2
                     if (list_of_distances[i] == 0 or b < list_of_distances[i]) and b > 0:
                         if lim == 'x':
                             if xmin <= b * cos(pi * i / 180) <= xmax:
